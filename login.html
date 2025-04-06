@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .reset-password-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .reset-password-link a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .reset-password-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Login to Your Account</h2>
+      <form action="/login" method="POST" id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+        <div class="form-group show-password-label">
+          <input type="checkbox" id="showPassword" />
+          <label for="showPassword">Show Password</label>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+
+      <div class="reset-password-link">
+        <a href="forgot password.html">Forgot Password?</a>
+      </div>
+
+      <div class="signup-link">
+        <p>Don't have an account? <a href="form.html">Sign Up</a></p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("showPassword")
+        .addEventListener("change", function () {
+          var passwordField = document.getElementById("password");
+          passwordField.type = this.checked ? "text" : "password";
+        });
+    </script>
+  </body>
+</html>
